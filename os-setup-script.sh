@@ -24,6 +24,7 @@ PACKAGES=(
     fzf
     ctags
     readline
+    dockutil
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
