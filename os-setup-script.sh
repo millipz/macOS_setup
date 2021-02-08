@@ -77,6 +77,8 @@ CASKS=(
     ableton-live-suite
     omnifocus
     microsoft-office
+    microsoft-teams
+    homebrew/cask-drivers/logitech-options
 )
 echo "Installing cask apps..."
 brew cask install ${CASKS[@]}
