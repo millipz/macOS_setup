@@ -24,7 +24,6 @@ PACKAGES=(
     fzf
     ctags
     readline
-    dockutil
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
@@ -61,7 +60,7 @@ CASKS=(
     iterm2
     bunch
     github
-    handbrake
+    homebrew/cask/handbrake
     cyberduck
     bartender
     karabiner-elements
@@ -79,9 +78,10 @@ CASKS=(
     microsoft-office
     microsoft-teams
     homebrew/cask-drivers/logitech-options
+    --cask zoom
 )
 echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
+brew install ${CASKS[@]}
 
 echo "Configuring OS..."
 # Set fast key repeat rate
@@ -94,9 +94,13 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 # Show filename extensions by default
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Enable tap-to-click
+# Set up trackpad
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+
 
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
