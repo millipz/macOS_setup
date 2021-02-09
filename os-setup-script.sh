@@ -79,6 +79,8 @@ CASKS=(
     microsoft-teams
     homebrew/cask-drivers/logitech-options
     --cask zoom
+    atext
+    grandperspective
 )
 echo "Installing cask apps..."
 brew install ${CASKS[@]}
